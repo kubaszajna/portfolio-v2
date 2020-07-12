@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+
+    <script src="./js/hover-effect.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="full-page-scroll.css" />
+    <title>Protfolio Kuba Szajna</title>
+</head>
+
+<body>
+    <div class="overlay">
+        <h1>kuba szajna</h1>
+        <span>architect & web developer</span>
+    </div>
+    <div id="main" class="scroll-container">
+        <section class="wrapper">
+            <div class="nav">
+                <div class="logo">
+                    <h1>
+                        <span>kuba<br />sza<br />jna</span>
+                        <br />
+                        inventive life
+                    </h1>
+                </div>
+
+                <div class="menu-links">
+                    <ul>
+                        <a href="#0">
+                <li>home.</li>
+              </a>
+                        <a href="#1">
+                <li>about.</li>
+              </a>
+                        <a href="#2">
+                <li>projects.</li>
+              </a>
+                        <a href="#3">
+                <li>contact.</li>
+              </a>
+                    </ul>
+                </div>
+
+                <div class="scrolldown"><a href="#1">scroll</a></div>
+            </div>
+
+            <div class="text">
+                <div class="title">unique</div>
+                <p>
+                    I make websites and architecture, <br />
+                    always unique projects.
+                </p>
+            </div>
+
+            <div class="watchnow">
+                <i class="fa fa-play"></i>
+                <a href="#">contact me</a>
+            </div>
+
+            <div class="media">
+                <ul>
+                    <li><i class="fa fa-facebook"></i></li>
+                    <li><i class="fa fa-twitter"></i></li>
+                    <li><i class="fa fa-instagram"></i></li>
+                </ul>
+            </div>
+
+            <div class="ellipse-container">
+                <div class="ellipse thin"></div>
+                <div class="ellipse thick"></div>
+                <div class="ellipse yellow"></div>
+                <div class="circle1"><span>architect</span></div>
+                <div class="circle2"><span>web developer</span></div>
+            </div>
+        </section>
+        <section class="section2">
+            <div>
+                <span>Page 2</span>
+            </div>
+        </section>
+        <section class="section3">
+            <div>
+                <span>Page 3</span>
+            </div>
+        </section>
+        <section class="section4">
+            <div>
+                <span>Page 4</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var hoverDistort = new hoverEffect({
+            parent: document.querySelector('.ellipse-container'),
+            intensity: 0.5,
+            image1: './images/pill.png',
+            image2: './images/face2.png',
+            displacementImage: './images/14.jpg',
+        });
+    </script>
+    <script src="./js/full-page-scroll.js"></script>
+    <script type="text/javascript">
+        new fullScroll({
+            mainElement: 'main',
+            displayDots: true,
+            dotsPosition: 'right',
+            animateTime: 0.7,
+            animateFunction: 'ease',
+        });
+    </script>
+    <script>
+        TweenMax.to('.overlay h1', 2, {
+            opacity: 0,
+            y: -60,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.to('.overlay span', 2, {
+            delay: 0.3,
+            opacity: 0,
+            y: -60,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.to('.overlay', 2, {
+            delay: 1,
+            top: '-100%',
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.ellipse-container', 1, {
+            delay: 2,
+            opacity: 0,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.yellow', 1, {
+            delay: 3.5,
+            opacity: 0,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.circle1', 1, {
+            delay: 2.4,
+            opacity: 0,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.circle2', 1, {
+            delay: 2.6,
+            opacity: 0,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.logo', 1, {
+            delay: 3,
+            opacity: 0,
+            y: -100,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.staggerFrom(
+            '.menu-links ul li',
+            1, {
+                delay: 3.2,
+                opacity: 0,
+                x: -100,
+                ease: Expo.easeInOut,
+            },
+            0.08
+        );
+
+        TweenMax.from('.scrolldown', 1, {
+            delay: 3.4,
+            opacity: 0,
+            y: 100,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.text .title', 1, {
+            delay: 3,
+            opacity: 0,
+            x: 200,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.text p', 1, {
+            delay: 3.2,
+            opacity: 0,
+            x: 200,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.from('.watchnow', 1, {
+            delay: 3.4,
+            opacity: 0,
+            x: 200,
+            ease: Expo.easeInOut,
+        });
+
+        TweenMax.staggerFrom(
+            '.media ul li',
+            1, {
+                delay: 3,
+                opacity: 0,
+                y: 100,
+                ease: Expo.easeInOut,
+            },
+            0.08
+        );
+    </script>
+</body>
+
+</html>
